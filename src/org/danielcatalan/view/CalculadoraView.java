@@ -49,7 +49,7 @@ private CalculadoraController controlador;
         Button btnPunto = crearBoton(".");
         Button btnIgual = crearBoton("=");
         Button btnClear = crearBoton("C");
-        Button btnBorrar = crearBoton("⌫");
+        Button btnPorcentaje = crearBoton("%");
  
         cuadroBotones.add(btnUno, 0, 4);
         cuadroBotones.add(btnDos, 1, 4);
@@ -69,7 +69,7 @@ private CalculadoraController controlador;
         cuadroBotones.add(btnClear, 0, 5);
         cuadroBotones.add(btnDividir, 2, 1);
         cuadroBotones.add(btnRaiz, 0, 1);
-        cuadroBotones.add(btnBorrar, 3, 1);
+        cuadroBotones.add(btnPorcentaje, 3, 1);
         cuadroBotones.add(btnPotencia, 1, 1);
 
         view.getChildren().addAll(pantalla, cuadroBotones); 

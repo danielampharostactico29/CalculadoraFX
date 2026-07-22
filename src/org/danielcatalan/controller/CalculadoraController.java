@@ -47,6 +47,15 @@ public class CalculadoraController {
             }
             actualizarPantalla(pantalla);
 
+        }else if(entrada.equals("%")) {
+            // misma secuencia que la raiz: afecta al operando activo
+            if (operador.isEmpty()) {
+                opcion1 = resultadoPorcentaje(opcion1);
+            } else {
+                opcion2 = resultadoPorcentaje(opcion2);
+            }
+            actualizarPantalla(pantalla);
+
         }else if(entrada.equals("=")) {
             if(operador.equals("+")) {
                 opcion1 = resultadoSuma(opcion1, opcion2);
@@ -109,6 +118,18 @@ public class CalculadoraController {
         double datoUno = Double.parseDouble(numeroUno);
         double datoDos = Double.parseDouble(numeroDos);
         double resultado = Math.pow(datoUno, datoDos);
+        if (resultado == (long) resultado) {
+            return String.valueOf((long) resultado);
+        }
+        return String.valueOf(resultado);
+    }
+
+    private String resultadoPorcentaje(String numero) {
+        if (numero.isEmpty()) {
+            return "0";
+        }
+        double dato = Double.parseDouble(numero);
+        double resultado = dato / 100;
         if (resultado == (long) resultado) {
             return String.valueOf((long) resultado);
         }
